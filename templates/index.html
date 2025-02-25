@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthcare & Medical AI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="particles"></div>
+    <div class="cyber-glow"></div>
+
+    <header>
+        <h1>Healthcare & Medical AI</h1>
+        <p>Next-Generation Medical Intelligence</p>
+    </header>
+
+    <main class="main-container">
+        <div class="card">
+            <div class="card-content">
+                <h2>AI Diagnostics</h2>
+                <p>Provide Your Medical Report and get your results here</p>
+                <div class="btn-container">
+                    <a href="{{ url_for('diseaseDetection') }}" class="btn">Explore Diagnostics</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-content">
+                <h2>Mental Health AI</h2>
+                <p>24/7 empathetic chatbot support with clinical-grade mental health assessment</p>
+                <div class="btn-container">
+                    <a href="mental-health-chatbot.html" class="btn">ChatBot</a>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
