@@ -1,10 +1,7 @@
-<<<<<<< HEAD
 # nixpacks.toml
 
 [start]
-=======
 # nixpacks.toml
 
 [start]
->>>>>>> 1f78e3e (Added pneumonia-model)
 cmd = "gunicorn app:app"
