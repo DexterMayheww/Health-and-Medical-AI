@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -218,4 +219,226 @@
         createParticles();
     </script>
 </body>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Mental Health Chatbot</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #00f3ff;
+            --secondary: #ff00ff;
+            --bg-gradient: linear-gradient(45deg, #0a0a2e, #1a1a4f);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #fff;
+            background: var(--bg-gradient);
+            overflow-x: hidden;
+            min-height: 100vh;
+            animation: fadeIn 2s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .particles {
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .container {
+            position: relative;
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+
+        .section {
+            font-size: 2.5rem;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .section::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--primary), transparent);
+        }
+
+        .instructions {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: #ddd;
+        }
+
+        .chatbox {
+            margin-top: 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .chatbox:hover {
+            border-color: var(--primary);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        textarea {
+            width: 100%;
+            height: 150px;
+            font-size: 1rem;
+            padding: 1rem;
+            border-radius: 10px;
+            border: none;
+            resize: none;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            transition: all 0.3s ease;
+        }
+
+        textarea:focus {
+            outline: none;
+            border: 1px solid var(--primary);
+            box-shadow: 0 0 10px rgba(0, 243, 255, 0.5);
+        }
+
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .btn {
+            padding: 1rem 3rem;
+            border-radius: 50px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: 0.5s;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px);
+        }
+
+        .response-container {
+            margin-top: 2rem;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            min-height: 100px;
+            font-size: 1.2rem;
+            color: var(--primary);
+            text-shadow: 0 0 10px rgba(0, 243, 255, 0.5);
+            transition: all 0.3s ease;
+        }
+
+        .response-container:hover {
+            border-color: var(--primary);
+            box-shadow: 0 0 20px rgba(0, 243, 255, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .container { padding: 1rem; }
+            .section { font-size: 2rem; }
+            .btn-container { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+    <div class="particles"></div>
+
+    <div class="container">
+        <div class="section">AI Mental Health Chatbot</div>
+        <div class="instructions">Type your thoughts or questions below. Our AI chatbot is here to provide guidance and emotional support.</div>
+        <div class="chatbox">
+            <textarea placeholder="How are you feeling today?"></textarea>
+        </div>
+        <div class="btn-container">
+            <button class="btn">Submit</button>
+            <a href="index.html" class="btn">Back to Home</a>
+        </div>
+        <div class="response-container">Chatbot response will appear here...</div>
+    </div>
+
+    <script>
+        // Particle animation
+        function createParticles() {
+            const container = document.querySelector('.particles');
+            for (let i = 0; i < 100; i++) {
+                const particle = document.createElement('div');
+                particle.style.cssText = `
+                    position: absolute;
+                    width: ${Math.random() * 4}px;
+                    height: ${Math.random() * 4}px;
+                    background: rgba(255, 255, 255, ${Math.random() * 0.5});
+                    border-radius: 50%;
+                    top: ${Math.random() * 100}vh;
+                    left: ${Math.random() * 100}vw;
+                    animation: float ${5 + Math.random() * 10}s infinite;
+                `;
+                container.appendChild(particle);
+            }
+        }
+
+        createParticles();
+    </script>
+</body>
+>>>>>>> 1f78e3e (Added pneumonia-model)
 </html>

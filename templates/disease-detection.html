@@ -1,3 +1,96 @@
+<<<<<<< HEAD
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeuraScan - AI Diagnostics</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/disease-styles.css') }}">
+</head>
+<body>
+    <div class="particles"></div>
+
+    <main class="main-container">
+        <div class="card">
+            <h1 class="section-title">AI Medical Imaging Analysis</h1>
+            <div class="upload-container" id="uploadContainer">
+                <label for="fileInput" class="upload-label">
+                    <div class="upload-icon">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                    </div>
+                    <span>Upload X-ray or CT Scan Image</span>
+                    <span class="text-muted">(JPEG, PNG, DICOM)</span>
+                </label>
+            </div>
+            <div id="imageContainer" class="image-container">
+                <img id="imagePreview" src="#" alt="Image Preview">
+            </div>
+            <form action="/" method="POST" enctype="multipart/form-data">
+                <input id="fileInput" type="file" name="image" accept="image/*" required>
+                <button class="btn choose-submit" type="button" onclick="document.getElementById('fileInput').click()"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLWNsb3VkLXVwbG9hZCI+PHBhdGggZD0iTTEyIDEzdjgiLz48cGF0aCBkPSJNNCAxNC44OTlBNyA3IDAgMSAxIDE1LjcxIDhoMS43OWE0LjUgNC41IDAgMCAxIDIuNSA4LjI0MiIvPjxwYXRoIGQ9Im04IDE3IDQtNCA0IDQiLz48L3N2Zz4=" alt="Image">Browse Files</button>
+                <button class="btn choose-submit" type="submit"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLXphcCI+PHBhdGggZD0iTTQgMTRhMSAxIDAgMCAxLS43OC0xLjYzbDkuOS0xMC4yYS41LjUgMCAwIDEgLjg2LjQ2bC0xLjkyIDYuMDJBMSAxIDAgMCAwIDEzIDEwaDdhMSAxIDAgMCAxIC43OCAxLjYzbC05LjkgMTAuMmEuNS41IDAgMCAxLS44Ni0uNDZsMS45Mi02LjAyQTEgMSAwIDAgMCAxMSAxNHoiLz48L3N2Zz4=" alt="Upload button">Analyze Scan</button>
+            </form>
+
+            <div class="disease-select">
+                <label class="disease-option">
+                    <input type="radio" name="disease" checked>
+                    <div class="option-content">
+                        <h3>Tuberculosis</h3>
+                        <p>99.2% detection accuracy</p>
+                    </div>
+                </label>
+                <label class="disease-option">
+                    <input type="radio" name="disease">
+                    <div class="option-content">
+                        <h3>Lung Cancer</h3>
+                        <p>98.7% detection accuracy</p>
+                    </div>
+                </label>
+                <label class="disease-option">
+                    <input type="radio" name="disease">
+                    <div class="option-content">
+                        <h3>Pneumonia</h3>
+                        <p>99.1% detection accuracy</p>
+                    </div>
+                </label>
+            </div>
+
+            <div id="imageContainer" class="image-container">
+                <img id="imagePreview" src="#" alt="Image Preview">
+            </div>
+
+            <div class="result-container">
+                {% if tb_classification %}
+                    <p>Prediction: {{ tb_classification }}<br></p>
+                    <div>
+                        <p>Tuberculosis: {{ tb }}%</p><p>Normal: {{ normal }}%</p>
+                    </div>
+                {% endif %}
+
+                {% if tb_classification %}
+                    <p>Prediction: {{ tb_classification }}<br></p>
+                    <div>
+                        <p>Tuberculosis: {{ tb }}%</p><p>Normal: {{ normal }}%</p>
+                    </div>
+                {% endif %}
+
+                {% if tb_classification %}
+                    <p>Prediction: {{ tb_classification }}<br></p>
+                    <div>
+                        <p>Tuberculosis: {{ tb }}%</p><p>Normal: {{ normal }}%</p>
+                    </div>
+                {% endif %}
+            
+                {% if error %}
+                    <p>Error: {{ error }}</p>
+                {% endif %}
+            </div>
+        </div>
+    </main>
+    <script defer src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+=======
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -90,4 +183,5 @@
     </main>
     <script defer src="{{ url_for('static', filename='js/app.js') }}"></script>
 </body>
+>>>>>>> 1f78e3e (Added pneumonia-model)
 </html>
