@@ -5,32 +5,9 @@ from tensorflow.keras.models import load_model
 import numpy as np
 import base64
 
-tb_model = load_model('models/tb-model.h5')
-cancer_model = load_model('models/cancer-model.h5')
-pneumonia_model = load_model('models/pneumonia-model.h5')
-
-import os
-
-print("Current working directory:", os.getcwd())
-
-model_path = os.path.join(os.getcwd(), 'models', 'tb-model.h5')
-if os.path.exists(model_path):
-    print("Model file exists at:", model_path)
-else:
-    print("Model file not found!")
-    
-model_path = os.path.join(os.getcwd(), 'models', 'cancer-model.h5')
-if os.path.exists(model_path):
-    print("Model file exists at:", model_path)
-else:
-    print("Model file not found!")
-    
-model_path = os.path.join(os.getcwd(), 'models', 'pneumonia-model.h5')
-if os.path.exists(model_path):
-    print("Model file exists at:", model_path)
-else:
-    print("Model file not found!")
-
+tb_model = load_model('tb-model.h5')
+cancer_model = load_model('cancer-model.h5')
+pneumonia_model = load_model('pneumonia-model.h5')
 
 app = Flask(__name__, template_folder='templates')
 
