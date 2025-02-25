@@ -5,9 +5,9 @@ from tensorflow.keras.models import load_model
 import numpy as np
 import base64
 
-tb_model = load_model('tb-model.h5')
-cancer_model = load_model('cancer-model.h5')
-pneumonia_model = load_model('pneumonia-model.h5')
+tb_model = load_model('./tb-model.h5')
+cancer_model = load_model('./cancer-model.h5')
+pneumonia_model = load_model('./pneumonia-model.h5')
 
 app = Flask(__name__, template_folder='templates')
 
