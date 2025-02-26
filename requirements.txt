@@ -36,7 +36,7 @@ tensorboard
 tensorboard-data-server
 tensorflow
 tensorflow-io-gcs-filesystem
-tenorflow_intel
+tensorflow_intel
 termcolor
 typing_extensions
 urllib3
