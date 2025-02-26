@@ -1,32 +1,43 @@
 import io
 from flask import Flask, request, render_template, jsonify
 from PIL import Image
-from tensorflow.keras.models import load_model
+from tensorflow.keras.models import load_model, save_model
 import numpy as np
 import base64
+from chatbot import get_chatbot_response
 
-tb_model = load_model('./tb-model.h5')
-cancer_model = load_model('./cancer-model.h5')
-pneumonia_model = load_model('./pneumonia-model.h5')
+tb_model = load_model('models/tb-model-compatible.h5')
+
+cancer_model = load_model('models/cancer-model-compatible.h5')
+
+pneumonia_model = load_model('models/pneumonia-model-compatible.h5')
 
 app = Flask(__name__, template_folder='templates')
 
-print(app.url_map)
-
-
 @app.route('/', methods=['GET', 'POST'])
 def index():
-    print(app.url_map)
     return render_template('index.html')
 
 @app.route('/disease-detection', methods=['GET'])
 def diseaseDetection():
-    print(app.url_map)
     return render_template('disease-detection.html')
+
+@app.route('/chatbot', methods=['GET', 'POST'])
+def chatbot():
+    if request.method == 'POST':
+        user_message = request.form.get("message")
+        if not user_message:
+            return render_template('chatbot.html', error="Please enter a message.")
+
+        response = get_chatbot_response(user_message)
+        
+        return render_template('chatbot.html', user_message=user_message, bot_response=response)
+
+    return render_template('chatbot.html')
+
 
 @app.route('/disease-detection', methods=['POST'])
 def upload():
-    print(app.url_map)
     if 'image' not in request.files:
         error = 'No image provided'
         return render_template('disease-detection.html', error=error)

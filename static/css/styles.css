@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap');
+
 :root {
     --primary: #00f3ff;
     --secondary: #ff00ff;
@@ -16,6 +18,7 @@ body {
     background: var(--bg-gradient);
     overflow-x: hidden;
     min-height: 100vh;
+    font-family: 'Kumbh Sans';
 }
 
 .particles {

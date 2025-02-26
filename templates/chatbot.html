@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Mental Health Chatbot</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/chatbot-styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="btn-container">
+            <a href="{{ url_for('index') }}" class="btn">Home</a>
+        </div>
+        <h1>AI Mental Health Chatbot</h1>
+        <p>Type your thoughts or questions below. Our AI chatbot is here to provide guidance and emotional support.</p>
+
+        {% if user_message %}
+
+                <table class="chatbox">
+                    <tr class="user-message">
+                        <th>You: </th>
+                        <td> {{ user_message }} </td>
+                    </tr>
+                    <tr class="bot-message">
+                        <th>AI: </th>
+                        <td> {{ bot_response }} </td>
+                    </tr>
+                </table>
+
+        {% endif %}
+
+        <form method="POST">
+            <textarea name="message" placeholder="How are you feeling today?"></textarea>
+            <button class="btn" type="submit">Send</button>
+        </form>
+
+        {% if error %}
+            <p style="color: red;">{{ error }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>

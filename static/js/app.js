@@ -37,16 +37,16 @@ document.getElementById('fileInput').addEventListener('change', function(event) 
     }
 });
 
-// window.addEventListener('load', function() {
-//     const preview = document.getElementById('imagePreview');
-//     const upload = document.getElementById('uploadArea');
-//     const imgContainer = document.getElementById('imageContainer');
-//     const savedImage = sessionStorage.getItem('uploadedImage');
+window.addEventListener('load', function() {
+    const preview = document.getElementById('imagePreview');
+    const upload = document.getElementById('uploadArea');
+    const imgContainer = document.getElementById('imageContainer');
+    const savedImage = sessionStorage.getItem('uploadedImage');
 
-//     if (savedImage) {
-//         preview.src = savedImage;
-//         preview.style.display = 'block';
-//         upload.style.display = 'none';
-//         imgContainer.style.display = 'flex';
-//     }
-// });
+    if (savedImage) {
+        preview.src = savedImage;
+        preview.style.display = 'block';
+        upload.style.display = 'none';
+        imgContainer.style.display = 'flex';
+    }
+});

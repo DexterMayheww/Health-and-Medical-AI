@@ -11,12 +11,14 @@
 
     <main class="main-container">
         <div class="card">
-
+            <div class="btn-container">
+                <a href="{{ url_for('index') }}" class="btn">Home</a>
+            </div>
             <h1 class="section-title">AI Medical Imaging Analysis</h1>
             <div class="upload-container" id="uploadContainer">
                 <label for="fileInput" class="upload-label">
                     <div class="upload-icon">
-                        <i class="fas fa-cloud-upload-alt"></i>
+                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLWNsb3VkLXVwbG9hZCI+PHBhdGggZD0iTTEyIDEzdjgiLz48cGF0aCBkPSJNNCAxNC44OTlBNyA3IDAgMSAxIDE1LjcxIDhoMS43OWE0LjUgNC41IDAgMCAxIDIuNSA4LjI0MiIvPjxwYXRoIGQ9Im04IDE3IDQtNCA0IDQiLz48L3N2Zz4=" alt="Image">
                     </div>
                     <span>Upload X-ray or CT Scan Image</span>
                     <span class="text-muted">(JPEG, PNG, DICOM)</span>

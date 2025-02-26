@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap');
+
+:root {
+    --primary: #00f3ff;
+    --secondary: #ff00ff;
+    --bg-gradient: linear-gradient(45deg, #0a0a2e, #1a1a4f);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: #fff;
+    background: var(--bg-gradient);
+    overflow-x: hidden;
+    min-height: 100vh;
+    font-family: 'Kumbh Sans';
+}
+
+.container {
+    position: relative;
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+h1, p {
+    margin-bottom: 1rem;
+}
+
+.chatbox {
+    margin: 2rem 0;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.chatbox:hover {
+    border-color: var(--primary);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.user-message, .bot-message {
+    text-align: left;
+
+    th {
+        width: 50px;
+    }
+
+    td, th {
+        padding-bottom: 1rem;
+    }
+}
+
+textarea {
+    width: 100%;
+    height: 150px;
+    font-size: 1rem;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    border-radius: 10px;
+    border: none;
+    resize: none;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+textarea:focus {
+    outline: none;
+    border: 1px solid var(--primary);
+    box-shadow: 0 0 10px rgba(0, 243, 255, 0.5);
+}
+
+.btn-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 1rem;
+}
+
+.btn {
+    padding: 1rem 3rem;
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: 0.5s;
+}
+
+.btn:hover::before {
+    left: 100%;
+}
+
+.btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-3px);
+}
+
+@media (max-width: 768px) {
+    .container { padding: 1rem; }
+}
